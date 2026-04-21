@@ -16,6 +16,7 @@ router.register(r'payments', PaymentsViewSet)
 router.register(r'settings', SettingsViewSet)
 router.register(r'staff', StaffViewSet)
 
+
 urlpatterns = [
     path('', include(router.urls)),
 ]

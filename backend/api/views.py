@@ -60,3 +60,5 @@ class SettingsViewSet(viewsets.ModelViewSet):
 class StaffViewSet(viewsets.ModelViewSet):
     queryset = Staff.objects.all().order_by('id')
     serializer_class = StaffSerializer
+
+

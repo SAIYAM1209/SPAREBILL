@@ -1,6 +1,9 @@
 from rest_framework import serializers
 from .models import Customers, Inventory, InvoiceItems, Invoices, Orders, Payments, Settings, Staff
 
+
+
+
 class CustomersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customers

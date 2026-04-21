@@ -21,92 +21,19 @@ const STORAGE_KEYS = {
 const initialData = {
   customers: [
     { id: 1, name: 'Rahul Motors', phone: '9876543210', email: 'rahul@gmail.com', address: 'Mumbai', total: 0, username: 'rahul', password: 'rahul123' },
-    { id: 2, name: 'Speed Garage', phone: '9123456780', email: 'speed@gmail.com', address: 'Pune', total: 0, username: 'speed', password: 'speed123' },
+    { id: 2, name: 'Sam Garage', phone: '9123456780', email: 'sam@gmail.com', address: 'Pune', total: 0, username: 'sam', password: 'sam123' },
     { id: 3, name: 'Premium Auto', phone: '9988776655', email: 'premium@gmail.com', address: 'Delhi', total: 0, username: 'premium', password: 'premium123' },
     { id: 4, name: 'City Service', phone: '9876123450', email: 'city@gmail.com', address: 'Bangalore', total: 0, username: 'city', password: 'city123' },
     { id: 5, name: 'Metro Auto Works', phone: '9822334455', email: 'metro@gmail.com', address: 'Hyderabad', total: 0, username: 'metro', password: 'metro123' },
     { id: 6, name: 'Northside Motors', phone: '9811122233', email: 'northside@gmail.com', address: 'Chennai', total: 0, username: 'north', password: 'north123' }
   ],
   staff: [
-    { id: 1, name: 'Amit Sharma', role: 'Manager', phone: '9000011111', email: 'amit@gmail.com' },
-    { id: 2, name: 'Neha Verma', role: 'Sales', phone: '9000022222', email: 'neha@gmail.com' },
-    { id: 3, name: 'Rohit Iyer', role: 'Cashier', phone: '9000033333', email: 'rohit@gmail.com' },
-    { id: 4, name: 'Sara Khan', role: 'Inventory', phone: '9000044444', email: 'sara@gmail.com' }
+    { id: 1, name: 'Vishant', role: 'Admin', username: 'admin', password: 'admin', phone: '9000012345' },
+    { id: 2, name: 'Rohan', role: 'Cashier', username: 'cashier', password: 'cashier', phone: '9000067890' }
   ],
-  inventory: [
-    { id: 1, category: 'Engine Parts', name: 'Piston', brand: 'Bosch', price: 1200, stock: 3, threshold: 5 },
-    { id: 2, category: 'Engine Parts', name: 'Piston', brand: 'TVS', price: 1050, stock: 7, threshold: 5 },
-    { id: 3, category: 'Brake System', name: 'Brake Pad', brand: 'TVS', price: 800, stock: 15, threshold: 5 },
-    { id: 4, category: 'Brake System', name: 'Brake Pad', brand: 'Brembo', price: 950, stock: 4, threshold: 5 },
-    { id: 5, category: 'Filters', name: 'Oil Filter', brand: 'Honda', price: 350, stock: 2, threshold: 5 },
-    { id: 6, category: 'Electrical', name: 'Alternator', brand: 'Bosch', price: 3500, stock: 8, threshold: 3 },
-    { id: 7, category: 'Tires', name: 'MRF Tire', brand: 'MRF', price: 2500, stock: 20, threshold: 5 },
-    { id: 8, category: 'Engine Parts', name: 'Gasket', brand: 'TVS', price: 450, stock: 12, threshold: 5 },
-    { id: 9, category: 'Suspension', name: 'Shock Absorber', brand: 'Monroe', price: 2200, stock: 6, threshold: 4 },
-    { id: 10, category: 'Electrical', name: 'Battery', brand: 'Exide', price: 5200, stock: 5, threshold: 3 },
-    { id: 11, category: 'Filters', name: 'Air Filter', brand: 'Bosch', price: 500, stock: 9, threshold: 5 },
-    { id: 12, category: 'Engine Parts', name: 'Piston', brand: 'Mahle', price: 1150, stock: 6, threshold: 5 },
-    { id: 13, category: 'Engine Parts', name: 'Piston', brand: 'ACL', price: 1100, stock: 8, threshold: 5 },
-    { id: 14, category: 'Brake System', name: 'Brake Pad', brand: 'Bosch', price: 880, stock: 10, threshold: 5 },
-    { id: 15, category: 'Brake System', name: 'Brake Pad', brand: 'EBC', price: 920, stock: 7, threshold: 5 },
-    { id: 16, category: 'Filters', name: 'Oil Filter', brand: 'Bosch', price: 380, stock: 11, threshold: 5 },
-    { id: 17, category: 'Filters', name: 'Oil Filter', brand: 'MANN', price: 400, stock: 9, threshold: 5 },
-    { id: 18, category: 'Filters', name: 'Oil Filter', brand: 'Fram', price: 360, stock: 13, threshold: 5 },
-    { id: 19, category: 'Electrical', name: 'Alternator', brand: 'Denso', price: 3400, stock: 6, threshold: 3 },
-    { id: 20, category: 'Electrical', name: 'Alternator', brand: 'Valeo', price: 3600, stock: 5, threshold: 3 },
-    { id: 21, category: 'Electrical', name: 'Alternator', brand: 'Lucas', price: 3300, stock: 7, threshold: 3 },
-    { id: 22, category: 'Tires', name: 'MRF Tire', brand: 'Michelin', price: 2800, stock: 12, threshold: 5 },
-    { id: 23, category: 'Tires', name: 'MRF Tire', brand: 'Bridgestone', price: 2700, stock: 10, threshold: 5 },
-    { id: 24, category: 'Tires', name: 'MRF Tire', brand: 'Apollo', price: 2400, stock: 14, threshold: 5 },
-    { id: 25, category: 'Engine Parts', name: 'Gasket', brand: 'Victor Reinz', price: 480, stock: 9, threshold: 5 },
-    { id: 26, category: 'Engine Parts', name: 'Gasket', brand: 'Fel-Pro', price: 520, stock: 7, threshold: 5 },
-    { id: 27, category: 'Engine Parts', name: 'Gasket', brand: 'Ajusa', price: 470, stock: 8, threshold: 5 },
-    { id: 28, category: 'Suspension', name: 'Shock Absorber', brand: 'KYB', price: 2300, stock: 5, threshold: 4 },
-    { id: 29, category: 'Suspension', name: 'Shock Absorber', brand: 'Gabriel', price: 2100, stock: 7, threshold: 4 },
-    { id: 30, category: 'Suspension', name: 'Shock Absorber', brand: 'Bilstein', price: 2600, stock: 4, threshold: 4 },
-    { id: 31, category: 'Electrical', name: 'Battery', brand: 'Amaron', price: 5100, stock: 6, threshold: 3 },
-    { id: 32, category: 'Electrical', name: 'Battery', brand: 'Bosch', price: 5400, stock: 5, threshold: 3 },
-    { id: 33, category: 'Electrical', name: 'Battery', brand: 'Luminous', price: 4800, stock: 8, threshold: 3 },
-    { id: 34, category: 'Filters', name: 'Air Filter', brand: 'MANN', price: 520, stock: 10, threshold: 5 },
-    { id: 35, category: 'Filters', name: 'Air Filter', brand: 'Fram', price: 480, stock: 12, threshold: 5 },
-    { id: 36, category: 'Filters', name: 'Air Filter', brand: 'Mahle', price: 510, stock: 11, threshold: 5 }
-  ],
+  inventory: [],
   orders: [],
-  invoices: [
-    {
-      id: 'INV-1001',
-      date: '2026-03-10',
-      customer: 'Rahul Motors',
-      phone: '9876543210',
-      customerId: 1,
-      customerUsername: 'rahul',
-      items: [
-        { part: 'Piston', brand: 'Bosch', price: 1200, qty: 1, amount: 1200 },
-        { part: 'Oil Filter', brand: 'Honda', price: 350, qty: 2, amount: 700 }
-      ],
-      subtotal: 1900,
-      tax: 95,
-      discount: 0,
-      total: 1995,
-      payment: { method: 'UPI', paid: 1995, balance: 0, status: 'Paid', txnId: 'UPI-123456789', date: '2026-03-10' }
-    },
-    {
-      id: 'INV-1002',
-      date: '2026-03-12',
-      customer: 'Speed Garage',
-      phone: '9123456780',
-      customerId: 2,
-      customerUsername: 'speed',
-      items: [
-        { part: 'Brake Pad', brand: 'TVS', price: 800, qty: 2, amount: 1600 }
-      ],
-      subtotal: 1600,
-      tax: 80,
-      discount: 0,
-      total: 1680,
-      payment: { method: 'Cash', paid: 800, balance: 880, status: 'Partial', txnId: '', date: '2026-03-12' }
-    }
-  ],
+  invoices: [],
   settings: {
     businessName: 'SpareBill Auto Parts',
     gst: 'GSTIN123456',
@@ -152,10 +79,16 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState('dashboard');
   const [modalAction, setModalAction] = useState(null);
   const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
+  const [syncStatus, setSyncStatus] = useState('connecting'); // 'syncing', 'synced', 'error'
+  const [isFirstSyncDone, setIsFirstSyncDone] = useState(false);
+  const [highlightId, setHighlightId] = useState(null);
 
-  const handleNavigate = (page, action = null) => {
+
+
+  const handleNavigate = (page, action = null, targetId = null) => {
     setCurrentPage(page);
     setModalAction(action);
+    setHighlightId(targetId);
   };
 
   const [customers, setCustomers] = useState([]);
@@ -178,21 +111,17 @@ export default function App() {
     password: ''
   });
 
+
+
   useEffect(() => {
-    const loggedIn = localStorage.getItem(STORAGE_KEYS.loggedIn);
-    const savedRole = localStorage.getItem(STORAGE_KEYS.role);
-    const savedCustomerId = localStorage.getItem(STORAGE_KEYS.customerId);
-    if (loggedIn === '1' && savedRole) {
-      setIsAuthenticated(true);
-      setRole(savedRole);
-    }
-    if (savedCustomerId) {
-      const parsedId = parseInt(savedCustomerId, 10);
-      if (!Number.isNaN(parsedId)) setCurrentCustomerId(parsedId);
-    }
-    loadAllData();
+    // Always start with the login screen by clearing any previous session
+    localStorage.removeItem(STORAGE_KEYS.loggedIn);
+    localStorage.removeItem(STORAGE_KEYS.role);
+    localStorage.removeItem(STORAGE_KEYS.customerId);
+
+    loadAllData(true);
     // Poll every 15 seconds so SQL shell changes appear live on frontend
-    const pollInterval = setInterval(() => loadAllData(), 15000);
+    const pollInterval = setInterval(() => loadAllData(false), 15000);
     return () => clearInterval(pollInterval);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -205,7 +134,8 @@ export default function App() {
     }
   }, [isAuthenticated]);
 
-  const loadAllData = async () => {
+  const loadAllData = async (isInitial = false) => {
+    setSyncStatus('syncing');
     try {
       const fetchOpts = { cache: 'no-store' };
       const [cusRes, stafRes, invRes, invcRes, ordRes, setRes, paymentsRes, itemsRes] = await Promise.all([
@@ -219,6 +149,8 @@ export default function App() {
         fetch('http://127.0.0.1:8000/api/invoice-items/', fetchOpts)
       ]);
       
+      if (!cusRes.ok || !stafRes.ok || !invRes.ok) throw new Error("Crucial API failure");
+
       const cusData = await cusRes.json();
       const stafData = await stafRes.json();
       const invData = await invRes.json();
@@ -246,7 +178,6 @@ export default function App() {
         return obj;
       };
 
-      // Normalize invoices: attach items array and payment object from separate tables
       const normalizedInvoices = (invcData || []).map(inv => {
         const invItems = (itemsData || [])
           .filter(it => it.invoice === inv.id)
@@ -276,7 +207,6 @@ export default function App() {
         };
       });
 
-      // Normalize orders: map DB fields to frontend fields
       const normalizedOrders = (ordData || []).map(o => ({
         ...parseDecimals(o),
         invoiceId: o.invoice || null,
@@ -284,7 +214,6 @@ export default function App() {
         finishedAt: o.finished_at || null
       }));
 
-      // Normalize settings: map DB snake_case to frontend camelCase
       const rawSettings = Array.isArray(setData) && setData.length > 0 ? setData[0] : null;
       const normalizedSettings = rawSettings ? {
         id: rawSettings.id,
@@ -301,14 +230,20 @@ export default function App() {
       setInvoices(normalizedInvoices);
       setOrders(normalizedOrders);
       setSettings(normalizedSettings);
+      setSyncStatus('synced');
+      setIsFirstSyncDone(true);
     } catch (e) {
-      console.error("API error, falling back to local storage...", e);
-      setCustomers(loadFromStorage(STORAGE_KEYS.customers, initialData.customers));
-      setStaff(loadFromStorage(STORAGE_KEYS.staff, initialData.staff));
-      setInventory(loadFromStorage(STORAGE_KEYS.inventory, initialData.inventory));
-      setInvoices(loadFromStorage(STORAGE_KEYS.invoices, initialData.invoices));
-      setOrders(loadFromStorage(STORAGE_KEYS.orders, initialData.orders));
-      setSettings(loadFromStorage(STORAGE_KEYS.settings, initialData.settings));
+      console.error("API error during sync:", e);
+      setSyncStatus('error');
+      if (isInitial) {
+        console.warn("Falling back to local storage for initial load.");
+        setCustomers(loadFromStorage(STORAGE_KEYS.customers, initialData.customers));
+        setStaff(loadFromStorage(STORAGE_KEYS.staff, initialData.staff));
+        setInventory(loadFromStorage(STORAGE_KEYS.inventory, initialData.inventory));
+        setInvoices(loadFromStorage(STORAGE_KEYS.invoices, initialData.invoices));
+        setOrders(loadFromStorage(STORAGE_KEYS.orders, initialData.orders));
+        setSettings(loadFromStorage(STORAGE_KEYS.settings, initialData.settings));
+      }
     }
   };
 
@@ -322,10 +257,13 @@ export default function App() {
   }, [customers, staff, inventory, invoices, orders, settings]);
 
   useEffect(() => {
-    if (customers.length > 0 || staff.length > 0 || inventory.length > 0) {
+    // Only save to localStorage if we have data OR if we've successfully synced with an empty DB.
+    // This prevents wiping local storage if the backend is simply down on startup.
+    const hasData = customers.length > 0 || staff.length > 0 || inventory.length > 0 || invoices.length > 0;
+    if (hasData || isFirstSyncDone) {
       saveAll();
     }
-  }, [customers, staff, inventory, invoices, orders, settings, saveAll]);
+  }, [customers, staff, inventory, invoices, orders, settings, saveAll, isFirstSyncDone]);
 
   const showToast = (message, type = 'success') => {
     setToast({ show: true, message, type });
@@ -333,19 +271,24 @@ export default function App() {
   };
 
   const login = () => {
-    const creds = {
-      admin: { u: 'admin', p: 'admin' },
-      cashier: { u: 'cashier', p: 'cashier' }
-    };
+    if (loginMode === 'owner') {
+      const user = staff.find(s => 
+        s.username === loginUsername && 
+        s.password === loginPassword && 
+        (s.role || '').toLowerCase() === selectedRole.toLowerCase()
+      );
 
-    if (loginMode === 'owner' && creds[selectedRole] && loginUsername === creds[selectedRole].u && loginPassword === creds[selectedRole].p) {
-      localStorage.setItem(STORAGE_KEYS.loggedIn, '1');
-      localStorage.setItem(STORAGE_KEYS.role, selectedRole);
-      localStorage.removeItem(STORAGE_KEYS.customerId);
-      setCurrentCustomerId(null);
-      setIsAuthenticated(true);
-      setRole(selectedRole);
-      showToast('Login successful', 'success');
+      if (user) {
+        localStorage.setItem(STORAGE_KEYS.loggedIn, '1');
+        localStorage.setItem(STORAGE_KEYS.role, selectedRole);
+        localStorage.removeItem(STORAGE_KEYS.customerId);
+        setCurrentCustomerId(null);
+        setIsAuthenticated(true);
+        setRole(selectedRole);
+        showToast('Login successful', 'success');
+      } else {
+        showToast('Invalid credentials', 'error');
+      }
     } else if (loginMode === 'customer') {
       const customer = customers.find(c => c.username === loginUsername && c.password === loginPassword);
       if (customer) {
@@ -447,6 +390,8 @@ export default function App() {
     }
   };
 
+
+
   if (!isAuthenticated) {
     return (
       <>
@@ -454,6 +399,7 @@ export default function App() {
         <div className="login-page">
           <div className="login-box">
             <h1>SpareBill Pro</h1>
+
             <div className="role-buttons">
               <button className={loginMode === 'owner' ? 'active' : ''} onClick={() => setLoginMode('owner')}>Shop Owner</button>
               <button className={loginMode === 'customer' ? 'active' : ''} onClick={() => setLoginMode('customer')}>Customer</button>
@@ -475,9 +421,7 @@ export default function App() {
                 <input placeholder="Username" value={loginUsername} onChange={(e) => setLoginUsername(e.target.value)} />
                 <input type="password" placeholder="Password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
                 <button className="login-btn" onClick={login}>Login</button>
-                <p style={{ opacity: 0.7, marginTop: 10, fontSize: '12px' }}>
-                  Owner: admin/admin or cashier/cashier | Customer: rahul/rahul123
-                </p>
+
               </>
             )}
             {loginMode === 'customer' && isRegister && (
@@ -504,6 +448,11 @@ export default function App() {
     <>
       <BackgroundCanvas />
       <div className="app-container">
+        <div className={`sync-indicator ${syncStatus}`}>
+          {syncStatus === 'syncing' && '🔄 Syncing...'}
+          {syncStatus === 'synced' && '🟢 Connected'}
+          {syncStatus === 'error' && '🔴 Offline'}
+        </div>
         <Sidebar role={role} currentPage={currentPage} onNavigate={handleNavigate} onLogout={logout} customer={currentCustomer} invoices={invoices} orders={orders} />
         <main className="main">
           {role === 'admin' && currentPage === 'dashboard' && (
@@ -522,7 +471,15 @@ export default function App() {
             <Staff staff={staff} setStaff={setStaff} showToast={showToast} />
           )}
           {(role === 'admin' || role === 'cashier') && currentPage === 'inventory' && (
-            <Inventory inventory={inventory} setInventory={setInventory} showToast={showToast} invoices={invoices} autoOpen={modalAction === 'addPart'} />
+            <Inventory 
+              inventory={inventory} 
+              setInventory={setInventory} 
+              showToast={showToast} 
+              invoices={invoices} 
+              autoOpen={modalAction === 'addPart'} 
+              highlightId={highlightId}
+              clearHighlight={() => setHighlightId(null)}
+            />
           )}
           {(role === 'admin' || role === 'cashier') && currentPage === 'payments' && (
             <Payments invoices={invoices} setInvoices={setInvoices} showToast={showToast} />
@@ -531,7 +488,7 @@ export default function App() {
             <Orders orders={orders} role={role} onFinishOrder={markOrderFinished} />
           )}
           {role === 'admin' && currentPage === 'reports' && (
-            <Reports inventory={inventory} invoices={invoices} />
+            <Reports inventory={inventory} invoices={invoices} onNavigate={handleNavigate} />
           )}
           {role === 'admin' && currentPage === 'settings' && (
             <Settings settings={settings} setSettings={setSettings} showToast={showToast} onReset={resetSystem} />
@@ -898,8 +855,9 @@ function Dashboard({ customers, staff, inventory, invoices, orders, role, onNavi
           ? lowStockItems.map(p => (
               <div
                 key={p.id}
-                className="card danger live-alert"
-                style={{ marginBottom: 10 }}
+                className="card danger live-alert clickable"
+                style={{ marginBottom: 10, cursor: 'pointer' }}
+                onClick={() => onNavigate('inventory', null, p.id)}
               >
                 🔴 Low stock: <b>{p.name}</b> ({p.stock} left)
               </div>
@@ -919,10 +877,6 @@ function Dashboard({ customers, staff, inventory, invoices, orders, role, onNavi
 }
 
 function Billing({ customers, inventory, setInventory, invoices, setInvoices, setCustomers, showToast, settings, addOrder }) {
-  const getRecommendedItem = () => {
-    if (!inventory || inventory.length === 0) return null;
-    return inventory.reduce((best, item) => (item.stock > best.stock ? item : best), inventory[0]);
-  };
 
   const getPartSuggestions = (category) => {
     if (!inventory || inventory.length === 0) return [];
@@ -951,17 +905,7 @@ function Billing({ customers, inventory, setInventory, invoices, setInvoices, se
     ).sort();
   };
 
-  const makeBillItem = () => {
-    const rec = getRecommendedItem();
-    if (!rec) return { category: '', part: '', brand: '', price: 0, qty: 1 };
-    return {
-      category: rec.category,
-      part: rec.name,
-      brand: rec.brand,
-      price: rec.price,
-      qty: 1
-    };
-  };
+  const makeBillItem = () => ({ category: '', part: '', brand: '', price: 0, qty: 1 });
 
   const [billCustomer, setBillCustomer] = useState('');
   const [billPhone, setBillPhone] = useState('');
@@ -976,25 +920,58 @@ function Billing({ customers, inventory, setInventory, invoices, setInvoices, se
   const [paymentDate, setPaymentDate] = useState(new Date().toISOString().slice(0, 10));
   const [showAutocomplete, setShowAutocomplete] = useState(false);
   const [autocompleteResults, setAutocompleteResults] = useState([]);
+  const [activeDropdownIndex, setActiveDropdownIndex] = useState(-1);
+  const autocompleteRef = useRef(null);
+  const newRowCategoryRef = useRef(null);
 
-  useEffect(() => {
-    if (!inventory || inventory.length === 0) return;
-    setBillItems(prev =>
-      prev.map(item =>
-        item.category || item.part || item.brand ? item : makeBillItem()
-      )
-    );
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inventory]);
+
 
   const handleCustomerChange = (value) => {
     setBillCustomer(value);
+    setActiveDropdownIndex(-1);
     if (value.length > 0) {
       const matches = customers.filter(c => c.name.toLowerCase().includes(value.toLowerCase()));
       setAutocompleteResults(matches);
       setShowAutocomplete(matches.length > 0);
     } else {
       setShowAutocomplete(false);
+      setAutocompleteResults([]);
+    }
+  };
+
+  const handleCustomerKeyDown = (e) => {
+    if (!showAutocomplete || autocompleteResults.length === 0) return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setActiveDropdownIndex(prev => {
+        const next = prev < autocompleteResults.length - 1 ? prev + 1 : 0;
+        // scroll into view
+        const list = autocompleteRef.current;
+        if (list) {
+          const item = list.children[next];
+          if (item) item.scrollIntoView({ block: 'nearest' });
+        }
+        return next;
+      });
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActiveDropdownIndex(prev => {
+        const next = prev > 0 ? prev - 1 : autocompleteResults.length - 1;
+        const list = autocompleteRef.current;
+        if (list) {
+          const item = list.children[next];
+          if (item) item.scrollIntoView({ block: 'nearest' });
+        }
+        return next;
+      });
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (activeDropdownIndex >= 0 && activeDropdownIndex < autocompleteResults.length) {
+        selectCustomer(autocompleteResults[activeDropdownIndex]);
+      }
+    } else if (e.key === 'Escape') {
+      setShowAutocomplete(false);
+      setActiveDropdownIndex(-1);
     }
   };
 
@@ -1003,6 +980,7 @@ function Billing({ customers, inventory, setInventory, invoices, setInvoices, se
     setBillPhone(customer.phone || '');
     setBillEmail(customer.email || '');
     setShowAutocomplete(false);
+    setActiveDropdownIndex(-1);
   };
 
   const handlePartChange = (index, field, value) => {
@@ -1035,7 +1013,7 @@ function Billing({ customers, inventory, setInventory, invoices, setInvoices, se
       newItems[index].category = match.category;
       newItems[index].brand = match.brand;
       newItems[index].price = match.price;
-    } else {
+    } else if (!value) {
       newItems[index].brand = '';
       newItems[index].price = 0;
     }
@@ -1069,7 +1047,11 @@ function Billing({ customers, inventory, setInventory, invoices, setInvoices, se
 
 
 
-  const addBillRow = () => { setBillItems([...billItems, makeBillItem()]); };
+  const addBillRow = () => {
+    setBillItems(prev => [...prev, makeBillItem()]);
+    // focus the category input of the new row after render
+    setTimeout(() => { if (newRowCategoryRef.current) newRowCategoryRef.current.focus(); }, 50);
+  };
   const removeBillRow = (index) => { setBillItems(billItems.filter((_, i) => i !== index)); };
 
   const subtotal = billItems.reduce((sum, item) => sum + (parseFloat(item.price || 0) * parseFloat(item.qty || 0)), 0);
@@ -1233,10 +1215,78 @@ function Billing({ customers, inventory, setInventory, invoices, setInvoices, se
       <div className="topbar"><div className="title">Billing / Create Invoice</div></div>
       <div className="section">
         <div className="form-grid">
-          <div className="form-group" style={{ position: 'relative' }}>
+          <div className="form-group">
             <label>Customer Name</label>
-            <input value={billCustomer} onChange={(e) => handleCustomerChange(e.target.value)} placeholder="Start typing customer name..." autoComplete="off" />
-            {showAutocomplete && (<div className="autocomplete-list">{autocompleteResults.map(c => (<div key={c.id} className="autocomplete-item" onClick={() => selectCustomer(c)}>{c.name}</div>))}</div>)}
+            <div style={{ display: 'flex', gap: 6, alignItems: 'center', position: 'relative' }}>
+              <input
+                value={billCustomer}
+                onChange={(e) => handleCustomerChange(e.target.value)}
+                onKeyDown={handleCustomerKeyDown}
+                onBlur={() => setTimeout(() => setShowAutocomplete(false), 150)}
+                onFocus={() => {
+                  if (billCustomer.length > 0 && autocompleteResults.length > 0) setShowAutocomplete(true);
+                }}
+                placeholder="Start typing customer name..."
+                autoComplete="off"
+                style={{ flex: 1, minWidth: 0 }}
+              />
+              {billCustomer && (
+                <button
+                  type="button"
+                  title="Clear all fields"
+                  onClick={() => {
+                    setBillCustomer('');
+                    setBillPhone('');
+                    setBillEmail('');
+                    setBillItems([makeBillItem()]);
+                    setBillDiscount(0);
+                    setPaymentMethod('Cash');
+                    setPaymentPaid(0);
+                    setPaymentTxnId('');
+                    setPaymentDate(new Date().toISOString().slice(0, 10));
+                    setShowAutocomplete(false);
+                    setAutocompleteResults([]);
+                    setActiveDropdownIndex(-1);
+                  }}
+                  style={{
+                    flexShrink: 0,
+                    width: 34,
+                    height: 34,
+                    borderRadius: 8,
+                    border: '1px solid #e74c3c',
+                    background: '#fdecef',
+                    color: '#e74c3c',
+                    fontSize: 16,
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    lineHeight: 1,
+                    transition: 'background 0.2s, transform 0.15s',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#e74c3c'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'scale(1.1)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = '#fdecef'; e.currentTarget.style.color = '#e74c3c'; e.currentTarget.style.transform = 'scale(1)'; }}
+                >
+                  &#10005;
+                </button>
+              )}
+              {showAutocomplete && (
+                <div className="autocomplete-list" ref={autocompleteRef} style={{ top: '100%', left: 0, right: 0, width: 'auto' }}>
+                  {autocompleteResults.map((c, idx) => (
+                    <div
+                      key={c.id}
+                      className={`autocomplete-item${idx === activeDropdownIndex ? ' active' : ''}`}
+                      onMouseDown={(e) => { e.preventDefault(); selectCustomer(c); }}
+                      onMouseEnter={() => setActiveDropdownIndex(idx)}
+                    >
+                      {c.name}
+                      {c.phone && <span style={{ marginLeft: 8, opacity: 0.6, fontSize: '0.85em' }}>{c.phone}</span>}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
           <div className="form-group"><label>Phone</label><input value={billPhone} onChange={(e) => setBillPhone(e.target.value)} placeholder="Phone" /></div>
           <div className="form-group"><label>Email</label><input value={billEmail} onChange={(e) => setBillEmail(e.target.value)} placeholder="Email ID" /></div>
@@ -1252,6 +1302,7 @@ function Billing({ customers, inventory, setInventory, invoices, setInvoices, se
               <tr key={index}>
                   <td>
                     <input
+                      ref={index === billItems.length - 1 ? newRowCategoryRef : null}
                       list={`category-suggestions-${index}`}
                       value={item.category}
                       onChange={(e) => handleCategoryInput(index, e.target.value)}
@@ -1292,7 +1343,16 @@ function Billing({ customers, inventory, setInventory, invoices, setInvoices, se
                   <td><input type="number" value={item.price} onChange={(e) => handlePartChange(index, 'price', parseFloat(e.target.value) || 0)} /></td>
                   <td><input type="number" min="1" value={item.qty} onChange={(e) => handlePartChange(index, 'qty', parseInt(e.target.value) || 1)} /></td>
                   <td>Rs. {(item.price * item.qty).toFixed(2)}</td>
-                  <td><button className="btn red small" onClick={() => removeBillRow(index)}>✖</button></td>
+                  <td><button
+                    className="btn red small"
+                    onClick={() => removeBillRow(index)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Tab' && !e.shiftKey && index === billItems.length - 1) {
+                        e.preventDefault();
+                        addBillRow();
+                      }
+                    }}
+                  >✖</button></td>
               </tr>
             ))}
           </tbody>
@@ -1438,55 +1498,162 @@ function Invoices({ invoices, setInvoices, showToast, settings }) {
 
   const downloadPDF = (invoice) => {
     const doc = new jsPDF('p', 'mm', 'a4');
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 15;
     let y = 20;
-    doc.setFontSize(18);
-    doc.text(settings.businessName || 'SpareBill Auto Parts', 105, y, { align: 'center' });
-    y += 12;
-    doc.setFontSize(11);
-    doc.text(`GST: ${settings.gst || ''}`, 14, y);
-    doc.text(`Invoice No: ${invoice.id}`, 150, y);
-    y += 8;
-    doc.text(`Date: ${invoice.date}`, 14, y);
-    doc.text(`Customer: ${invoice.customer}`, 14, y + 8);
-    doc.text(`Phone: ${invoice.phone}`, 150, y + 8);
-    y += 20;
-    doc.setFontSize(12);
-    doc.text('Part', 14, y); doc.text('Brand', 60, y); doc.text('Price', 105, y); doc.text('Qty', 130, y); doc.text('Amount', 155, y);
-    y += 2;
-    doc.line(14, y, 195, y);
-    y += 8;
-    invoice.items.forEach(item => {
-      doc.text(item.part, 14, y);
-      doc.text(item.brand, 60, y);
-      doc.text(`Rs. ${item.price}`, 105, y);
-      doc.text(item.qty.toString(), 130, y);
-      doc.text(`Rs. ${item.amount.toFixed(2)}`, 155, y);
-      y += 7;
-    });
-    y += 4;
-    doc.line(14, y, 195, y);
-    y += 10;
-    doc.setFontSize(11);
-    doc.text(`Subtotal: Rs. ${invoice.subtotal.toFixed(2)}`, 130, y); y += 7;
-    doc.text(`Tax: Rs. ${invoice.tax.toFixed(2)}`, 130, y); y += 7;
-    doc.text(`Discount: Rs. ${invoice.discount.toFixed(2)}`, 130, y); y += 10;
-    doc.setFontSize(14);
-    doc.text(`Total: Rs. ${invoice.total.toFixed(2)}`, 130, y);
-    y += 15;
+
+    // --- Header ---
+    doc.setFillColor(31, 63, 122); // Dark Blue
+    doc.rect(0, 0, pageWidth, 40, 'F');
+    
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(22);
+    doc.text(settings.businessName || 'SpareBill Auto Parts', margin, 25);
+    
     doc.setFontSize(10);
-    doc.text(settings.footer || 'Thank you for your business!', 105, y, { align: 'center', maxWidth: 180 });
-    doc.save(`${invoice.id}.pdf`);
+    doc.setFont('helvetica', 'normal');
+    doc.text('INVOICE', pageWidth - margin, 25, { align: 'right' });
+    doc.setFontSize(14);
+    doc.text(`#${invoice.id}`, pageWidth - margin, 33, { align: 'right' });
+
+    y = 55;
+    doc.setTextColor(40, 40, 40);
+    
+    // --- Business Details ---
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('FROM:', margin, y);
+    doc.setFont('helvetica', 'normal');
+    doc.text(settings.businessName || 'SpareBill Auto Parts', margin, y + 6);
+    if (settings.gst) doc.text(`GST: ${settings.gst}`, margin, y + 11);
+    if (settings.phone) doc.text(`Phone: ${settings.phone}`, margin, y + 16);
+    if (settings.email) doc.text(`Email: ${settings.email}`, margin, y + 21);
+
+    // --- Customer Details ---
+    const rightColX = 120;
+    doc.setFont('helvetica', 'bold');
+    doc.text('BILLED TO:', rightColX, y);
+    doc.setFont('helvetica', 'normal');
+    doc.text(invoice.customer, rightColX, y + 6);
+    if (invoice.phone) doc.text(`Phone: ${invoice.phone}`, rightColX, y + 11);
+    doc.text(`Date: ${invoice.date}`, rightColX, y + 16);
+
+    y += 35;
+
+    // --- Table Header ---
+    doc.setFillColor(240, 240, 240);
+    doc.rect(margin, y - 5, pageWidth - (margin * 2), 10, 'F');
+    doc.setDrawColor(200, 200, 200);
+    doc.line(margin, y + 5, pageWidth - margin, y + 5);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text('Description', margin + 2, y + 1);
+    doc.text('Brand', 70, y + 1);
+    doc.text('Price', 110, y + 1, { align: 'right' });
+    doc.text('Qty', 140, y + 1, { align: 'right' });
+    doc.text('Amount', pageWidth - margin - 2, y + 1, { align: 'right' });
+
+    y += 12;
+    doc.setFont('helvetica', 'normal');
+    
+    // --- Table Rows ---
+    (invoice.items || []).forEach((item) => {
+      if (y > 270) {
+        doc.addPage();
+        y = 20;
+      }
+      doc.text(item.part, margin + 2, y);
+      doc.text(item.brand || '-', 70, y);
+      doc.text(parseFloat(item.price).toFixed(2), 110, y, { align: 'right' });
+      doc.text(item.qty.toString(), 140, y, { align: 'right' });
+      doc.text(parseFloat(item.amount).toFixed(2), pageWidth - margin - 2, y, { align: 'right' });
+      y += 8;
+    });
+
+    y += 4;
+    doc.setDrawColor(31, 63, 122);
+    doc.setLineWidth(0.5);
+    doc.line(margin, y, pageWidth - margin, y);
+    y += 10;
+
+    // --- Summary ---
+    const summaryX = pageWidth - margin - 50;
+    doc.setFontSize(10);
+    doc.text('Subtotal:', summaryX, y);
+    doc.text(`Rs. ${parseFloat(invoice.subtotal).toFixed(2)}`, pageWidth - margin - 2, y, { align: 'right' });
+    y += 6;
+    doc.text('Tax (5%):', summaryX, y);
+    doc.text(`Rs. ${parseFloat(invoice.tax).toFixed(2)}`, pageWidth - margin - 2, y, { align: 'right' });
+    y += 6;
+    doc.text('Discount:', summaryX, y);
+    doc.text(`-Rs. ${parseFloat(invoice.discount).toFixed(2)}`, pageWidth - margin - 2, y, { align: 'right' });
+    
+    y += 8;
+    doc.setFillColor(31, 63, 122);
+    doc.rect(summaryX - 5, y - 5, 55, 10, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(12);
+    doc.text('TOTAL:', summaryX, y + 1);
+    doc.text(`Rs. ${parseFloat(invoice.total).toFixed(2)}`, pageWidth - margin - 2, y + 1, { align: 'right' });
+
+    // --- Footer ---
+    y = 280;
+    doc.setTextColor(150, 150, 150);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'italic');
+    doc.text(settings.footer || 'Thank you for your business!', pageWidth / 2, y, { align: 'center' });
+
+    doc.save(`Invoice_${invoice.id}.pdf`);
     showToast('Invoice PDF downloaded', 'success');
   };
 
   const exportAllPDF = () => {
-    const doc = new jsPDF();
-    doc.setFontSize(16);
-    doc.text('Invoices Report', 105, 20, { align: 'center' });
+    const doc = new jsPDF('p', 'mm', 'a4');
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 15;
+    
+    doc.setFillColor(31, 63, 122);
+    doc.rect(0, 0, pageWidth, 25, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Invoices Summary Report', pageWidth / 2, 16, { align: 'center' });
+
     let y = 35;
-    invoices.forEach(inv => { doc.text(`${inv.id} | ${inv.date} | ${inv.customer} | Rs. ${inv.total.toFixed(2)}`, 14, y); y += 7; if (y > 280) { doc.addPage(); y = 20; } });
-    doc.save('Invoices_Report.pdf');
-    showToast('Invoices exported to PDF', 'success');
+    doc.setTextColor(40, 40, 40);
+    doc.setFontSize(10);
+    
+    // Header Row
+    doc.setFillColor(230, 230, 230);
+    doc.rect(margin, y - 5, pageWidth - margin * 2, 8, 'F');
+    doc.text('Inv #', margin + 2, y);
+    doc.text('Date', 45, y);
+    doc.text('Customer', 80, y);
+    doc.text('Total Amount', pageWidth - margin - 2, y, { align: 'right' });
+    
+    y += 10;
+    doc.setFont('helvetica', 'normal');
+    
+    invoices.forEach((inv, idx) => {
+      if (y > 275) {
+        doc.addPage();
+        y = 20;
+      }
+      if (idx % 2 === 0) {
+        doc.setFillColor(248, 248, 248);
+        doc.rect(margin, y - 5, pageWidth - margin * 2, 8, 'F');
+      }
+      doc.text(inv.id, margin + 2, y);
+      doc.text(inv.date, 45, y);
+      doc.text(inv.customer, 80, y);
+      doc.text(`Rs. ${parseFloat(inv.total).toFixed(2)}`, pageWidth - margin - 2, y, { align: 'right' });
+      y += 8;
+    });
+
+    doc.save('Invoices_Summary_Report.pdf');
+    showToast('Invoices exported successfully', 'success');
   };
 
   const exportAllXML = () => {
@@ -1886,18 +2053,29 @@ function Staff({ staff, setStaff, showToast }) {
   );
 }
 
-function Inventory({ inventory, setInventory, showToast, invoices, autoOpen }) {
+function Inventory({ inventory, setInventory, showToast, invoices, autoOpen, highlightId, clearHighlight }) {
   const [showModal, setShowModal] = useState(autoOpen || false);
   useEffect(() => {
     if (autoOpen) setShowModal(true);
   }, [autoOpen]);
+
+  useEffect(() => {
+    if (highlightId) {
+      const el = document.getElementById(`inventory-item-${highlightId}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+          if (clearHighlight) clearHighlight();
+        }, 3000);
+      }
+    }
+  }, [highlightId, clearHighlight]);
+
   const [newPart, setNewPart] = useState({ category: '', name: '', brand: '', price: 0, stock: 0, threshold: 5 });
   const [editIndex, setEditIndex] = useState(null);
   const [editPart, setEditPart] = useState({ category: '', name: '', brand: '', price: 0, stock: 0, threshold: 5 });
 
-  const getBrandCountForPart = (items, category, name) => {
-    return new Set(items.filter(p => p.category === category && p.name === name).map(p => p.brand)).size;
-  };
+
 
   const addPart = async () => {
     if (!newPart.category || !newPart.name || !newPart.brand || !newPart.price) {
@@ -1918,7 +2096,6 @@ function Inventory({ inventory, setInventory, showToast, invoices, autoOpen }) {
       showToast('Fill all required fields', 'error');
       return;
     }
-    const nextInventory = inventory.map((p, i) => (i === editIndex ? { ...p, ...editPart } : p));
     try {
       const res = await apiCall(`inventory/${editPart.id}`, 'PUT', editPart);
       setInventory(inventory.map((p, i) => (i === editIndex ? res : p)));
@@ -1933,8 +2110,11 @@ function Inventory({ inventory, setInventory, showToast, invoices, autoOpen }) {
     try {
       await apiCall(`inventory/${target.id}`, 'DELETE');
       setInventory(remaining);
-      showToast('Part deleted', 'warn');
-    } catch (e) { showToast('Error deleting from DB', 'error'); }
+      showToast('Part deleted from database', 'warn');
+    } catch (e) {
+      setInventory(remaining);
+      showToast('Part deleted (local only - DB error)', 'warn');
+    }
   };
   const exportPDF = () => { const doc = new jsPDF(); doc.setFontSize(16); doc.text('Inventory Report', 105, 20, { align: 'center' }); let y = 35; inventory.forEach(p => { doc.text(`${p.id} | ${p.category} | ${p.name} | ${p.brand} | Rs.${p.price} | Stock:${p.stock}`, 14, y); y += 7; if (y > 280) { doc.addPage(); y = 20; } }); doc.save('Inventory_Report.pdf'); showToast('Inventory exported to PDF', 'success'); };
 
@@ -1944,7 +2124,7 @@ function Inventory({ inventory, setInventory, showToast, invoices, autoOpen }) {
       <PaymentSummary invoices={invoices} title="Payments (All Invoices)" />
       <div className="section">
         <div className="table-wrap">
-          <table><thead><tr><th>ID</th><th>Category</th><th>Part</th><th>Brand</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead><tbody>{inventory.map((p, i) => (<tr key={i}><td>{p.id}</td><td>{p.category}</td><td>{p.name}</td><td>{p.brand}</td><td>Rs. {p.price}</td><td>{p.stock}</td><td>{p.stock <= p.threshold ? <span className="tag low">LOW</span> : <span className="tag ok">OK</span>}</td><td><button className="btn blue small" onClick={() => openEdit(i)}>Edit</button> <button className="btn red small" onClick={() => deletePart(i)}>Delete</button></td></tr>))}</tbody></table>
+          <table><thead><tr><th>ID</th><th>Category</th><th>Part</th><th>Brand</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead><tbody>{inventory.map((p, i) => (<tr key={i} id={`inventory-item-${p.id}`} className={String(p.id) === String(highlightId) ? 'highlight-row' : ''}><td>{p.id}</td><td>{p.category}</td><td>{p.name}</td><td>{p.brand}</td><td>Rs. {p.price}</td><td>{p.stock}</td><td>{p.stock <= p.threshold ? <span className="tag low">LOW</span> : <span className="tag ok">OK</span>}</td><td><button className="btn blue small" onClick={() => openEdit(i)}>Edit</button> <button className="btn red small" onClick={() => deletePart(i)}>Delete</button></td></tr>))}</tbody></table>
         </div>
       </div>
       <Modal isOpen={showModal} onClose={() => setShowModal(false)} title="Add Spare Part">
@@ -1976,7 +2156,7 @@ function Inventory({ inventory, setInventory, showToast, invoices, autoOpen }) {
   );
 }
 
-function Reports({ inventory, invoices }) {
+function Reports({ inventory, invoices, onNavigate }) {
   const salesMap = {}; invoices.forEach(i => { salesMap[i.date] = (salesMap[i.date] || 0) + i.total; });
   const lowStockItems = inventory.filter(p => p.stock <= p.threshold);
   const exportSalesReport = () => { const doc = new jsPDF(); doc.setFontSize(16); doc.text('Sales Report', 105, 20, { align: 'center' }); let y = 35; Object.keys(salesMap).sort().forEach(d => { doc.text(`${d} : Rs. ${salesMap[d].toFixed(2)}`, 14, y); y += 7; if (y > 280) { doc.addPage(); y = 20; } }); doc.save('Sales_Report.pdf'); };
@@ -2004,7 +2184,7 @@ function Reports({ inventory, invoices }) {
           <Line data={salesChartData} options={{ responsive: true, plugins: { legend: { display: true } } }} />
         </div>
       </div>
-      <div className="section"><h3>Low Stock Report</h3>{lowStockItems.length > 0 ? lowStockItems.map(p => (<div key={p.id} className="card danger" style={{ marginBottom: 10 }}>🔴 {p.name} ({p.brand}) — {p.stock} left</div>)) : <div className="card success">✅ No low stock items</div>}</div>
+      <div className="section live-alerts-section"><h3>🚨 Low Stock Report</h3>{lowStockItems.length > 0 ? lowStockItems.map(p => (<div key={p.id} className="card danger live-alert clickable" style={{ marginBottom: 10, cursor: 'pointer' }} onClick={() => onNavigate('inventory', null, p.id)}>🔴 Low stock: <b>{p.name}</b> ({p.brand}) — {p.stock} left</div>)) : <div className="card success live-alert">✅ No low stock items</div>}</div>
     </div>
   );
 }
@@ -2285,31 +2465,31 @@ function CustomerPanel({ inventory, setInventory, invoices, setInvoices, showToa
       }
     });
 
-  const addToCart = (product) => {
+  const addToCart = useCallback((product) => {
     const existing = cart.find(item => item.name === product.name && item.brand === product.brand);
     if (product.stock <= 0) {
       showToast('Out of stock', 'error');
       return;
     }
     if (existing) {
-      if (existing.qty < product.stock) setCart(cart.map(item => item.name === product.name && item.brand === product.brand ? { ...item, qty: item.qty + 1 } : item));
+      if (existing.qty < product.stock) setCart(prev => prev.map(item => item.name === product.name && item.brand === product.brand ? { ...item, qty: item.qty + 1 } : item));
       else showToast('Not enough stock', 'error');
-    } else setCart([...cart, { ...product, qty: 1 }]);
+    } else setCart(prev => [...prev, { ...product, qty: 1 }]);
 
-    setInventory(inventory.map(item => (
+    setInventory(prev => prev.map(item => (
       item.id === product.id ? { ...item, stock: Math.max(0, item.stock - 1) } : item
     )));
     showToast('Added to cart', 'success');
-  };
+  }, [cart, showToast, setInventory, setCart]);
 
-  const addToWishlist = (product) => {
+  const addToWishlist = useCallback((product) => {
     if (wishlist.some(item => item.name === product.name && item.brand === product.brand)) {
       showToast('Already in wishlist', 'info');
       return;
     }
-    setWishlist([...wishlist, { ...product }]);
+    setWishlist(prev => [...prev, { ...product }]);
     showToast('Added to wishlist', 'success');
-  };
+  }, [wishlist, showToast]);
 
   const removeFromWishlist = (index) => {
     setWishlist(wishlist.filter((_, i) => i !== index));
@@ -2350,37 +2530,117 @@ function CustomerPanel({ inventory, setInventory, invoices, setInvoices, showToa
   const outstanding = customerInvoices.filter(inv => (inv.payment?.balance || 0) > 0);
   const outstandingTotal = outstanding.reduce((sum, inv) => sum + parseFloat(inv.payment?.balance || 0), 0);
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     if (cart.length === 0) { showToast('Cart is empty', 'error'); return; }
+    
+    const invoiceId = 'INV-' + Date.now();
+    const date = new Date().toISOString().slice(0, 10);
+    const subtotal = cartTotal;
+    const tax = cartTax;
+    const total = cartFinal;
+    const items = cart.map(item => ({ 
+      part: item.name, 
+      brand: item.brand, 
+      price: item.price, 
+      qty: item.qty, 
+      amount: item.price * item.qty 
+    }));
+
     const invoice = {
-      id: 'INV-' + Date.now(),
-      date: new Date().toISOString().slice(0, 10),
+      id: invoiceId,
+      date,
       customer: currentCustomer ? currentCustomer.name : 'Customer',
       phone: currentCustomer ? currentCustomer.phone : '',
-      customerId: currentCustomer ? currentCustomer.id : null,
-      customerUsername: currentCustomer ? currentCustomer.username : null,
-      items: cart.map(item => ({ part: item.name, brand: item.brand, price: item.price, qty: item.qty, amount: item.price * item.qty })),
-      subtotal: cartTotal,
-      tax: cartTax,
+      customer_0: currentCustomer ? currentCustomer.id : null,
+      customer_username: currentCustomer ? currentCustomer.username : null,
+      subtotal,
+      tax,
       discount: 0,
-      total: cartFinal,
+      total,
+      items,
       payment: {
         method: 'Customer',
-        paid: cartFinal,
+        paid: total,
         balance: 0,
         status: 'Paid',
         txnId: '',
-        date: new Date().toISOString().slice(0, 10)
+        date
       }
     };
-    setInvoices(prev => [invoice, ...prev]);
-    if (addOrder) addOrder(invoice, 'customer');
-    setCart([]);
-    showToast('Order placed successfully!', 'success');
+
+    try {
+      // 1. POST invoice
+      const savedInvoice = await apiCall('invoices', 'POST', {
+        id: invoice.id,
+        date: invoice.date,
+        customer: invoice.customer,
+        phone: invoice.phone,
+        customer_0: invoice.customer_0,
+        customer_username: invoice.customer_username,
+        subtotal: invoice.subtotal,
+        tax: invoice.tax,
+        discount: invoice.discount,
+        total: invoice.total
+      });
+
+      // 2. POST items
+      const savedItems = [];
+      for (const it of items) {
+        const res = await apiCall('invoice-items', 'POST', {
+          invoice: savedInvoice.id,
+          part: it.part,
+          brand: it.brand || '',
+          price: it.price,
+          qty: it.qty,
+          amount: it.amount
+        });
+        savedItems.push(res);
+      }
+
+      // 3. POST payment
+      const savedPayment = await apiCall('payments', 'POST', {
+        invoice: savedInvoice.id,
+        method: 'Customer',
+        paid: total,
+        balance: 0,
+        status: 'Paid',
+        txn_id: '',
+        payment_date: date
+      });
+
+      // 4. Note: Inventory stock was already decremented locally during addToCart.
+      // Next sync cycle will fetch final confirmed stock from DB.
+
+      const fullInvoice = {
+        ...savedInvoice,
+        items: savedItems,
+        customerId: currentCustomer?.id,
+        customerUsername: currentCustomer?.username,
+        payment: {
+          method: savedPayment.method,
+          paid: parseFloat(savedPayment.paid) || 0,
+          balance: parseFloat(savedPayment.balance) || 0,
+          status: savedPayment.status,
+          txnId: savedPayment.txn_id || '',
+          date: savedPayment.payment_date || date
+        }
+      };
+
+      setInvoices(prev => [fullInvoice, ...prev]);
+      if (addOrder) addOrder(fullInvoice, 'customer');
+      setCart([]);
+      showToast('Order placed & saved to database!', 'success');
+    } catch (e) {
+      console.error("Checkout failed persistence:", e);
+      setInvoices(prev => [invoice, ...prev]);
+      if (addOrder) addOrder(invoice, 'customer');
+      setCart([]);
+      showToast('Order placed (local only - DB error)', 'warn');
+    }
   };
 
   return (
-    <div id="customer" className="page fade-in">
+    <div id="customer" className="page">
       <div className="topbar"><div className="title">Product Catalog</div></div>
       <div id="customer-catalog" className="section">
         <div style={{ display: 'flex', gap: 10, marginBottom: 12, flexWrap: 'wrap' }}>
@@ -2405,8 +2665,8 @@ function CustomerPanel({ inventory, setInventory, invoices, setInvoices, showToa
           </label>
         </div>
         <div className="product-grid">
-          {filteredProducts.map((p, i) => (
-            <div key={i} className="product-card">
+          {filteredProducts.map((p) => (
+            <div key={p.id} className="product-card">
               <h4>{p.name}</h4>
               <p style={{ opacity: 0.7 }}>{p.brand} | {p.category}</p>
               <div className="price">Rs. {p.price}</div>
@@ -2424,9 +2684,9 @@ function CustomerPanel({ inventory, setInventory, invoices, setInvoices, showToa
         <h3>Wishlist</h3>
         {wishlist.length === 0 && <div className="card info">Your wishlist is empty</div>}
         {wishlist.map((item, i) => (
-          <div key={i} className="cart-item">
+          <div key={item.id || `wish-${i}`} className="cart-item wishlist-item">
             <div><b>{item.name}</b><br /><small>{item.brand} | {item.category}</small></div>
-            <div style={{ display: 'flex', gap: 8 }}>
+            <div className="wishlist-actions">
               <button className="btn blue small" onClick={() => addToCart(item)}>Add to Cart</button>
               <button className="btn red small" onClick={() => removeFromWishlist(i)}>Remove</button>
             </div>
@@ -2438,13 +2698,13 @@ function CustomerPanel({ inventory, setInventory, invoices, setInvoices, showToa
         <h3>Shopping Cart</h3>
         {cart.length === 0 && <div className="card info">Your cart is empty</div>}
         {cart.map((item, i) => (
-          <div key={i} className="cart-item">
+          <div key={item.id || `cart-${i}`} className="cart-item">
             <div><b>{item.name}</b><br /><small>{item.brand}</small></div>
             <div className="quantity-controls">
               <button onClick={() => updateCartQty(i, -1)}>-</button>
               <span>{item.qty}</span>
               <button onClick={() => updateCartQty(i, 1)}>+</button>
-              <button className="btn red small" onClick={() => removeFromCart(i)}>Remove</button>
+              <button className="btn red small" style={{ marginLeft: 8 }} onClick={() => removeFromCart(i)}>Remove</button>
             </div>
           </div>
         ))}
@@ -2467,11 +2727,11 @@ function CustomerPanel({ inventory, setInventory, invoices, setInvoices, showToa
         )}
         {customerInvoices.length === 0 && <div className="card info">No purchases yet</div>}
         {customerInvoices.slice().reverse().map(inv => (
-          <div key={inv.id} className="card">
+          <div key={inv.id} className="card history-card">
             <div><b>{inv.id}</b> — {inv.date}</div>
             <div>Total: Rs. {parseFloat(inv.total || 0).toFixed(2)}</div>
             <div style={{ fontSize: 12, opacity: 0.7 }}>
-              {inv.items.length} item(s) | Paid: Rs. {(inv.payment?.paid || 0).toFixed(2)} | Balance: Rs. {(inv.payment?.balance || 0).toFixed(2)} | Status: {inv.payment?.status || 'Unpaid'}
+              {inv.items?.length || 0} item(s) | Paid: Rs. {(inv.payment?.paid || 0).toFixed(2)} | Balance: Rs. {(inv.payment?.balance || 0).toFixed(2)} | Status: {inv.payment?.status || 'Unpaid'}
             </div>
           </div>
         ))}
